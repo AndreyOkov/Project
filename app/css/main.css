@@ -1,0 +1,12 @@
+.if {
+  margin-top: 100px;
+  border: 3px solid #EF710C;
+  width: 200px;
+  height: 50px;
+  text-align: center; }
+
+.words {
+  font-size: 30px;
+  line-height: 50px;
+  color: #6F880F;
+  transition: all .5s ease; }
