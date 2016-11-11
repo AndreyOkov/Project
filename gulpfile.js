@@ -7,14 +7,15 @@ var browserSync = require('browser-sync'),
     uglify      = require('gulp-uglify'),
     sass        = require('gulp-sass'),
     minifyCss   = require('gulp-clean-css'),
+    rigger      = require('gulp-rigger'),
 	reload 		= browserSync.reload;
 
 var config = {
     server: { baseDir: "./app" }, 
     host: 'localhost',
     port: 3000,
-    notify: false
-    // tunnel: true,
+    // notify: false
+    tunnel: true,
     // logPrefix: "ShablonLight"
 };
 
@@ -31,7 +32,7 @@ gulp.task('useref', function(){
     .pipe(useref())
     .pipe(gulpif('*.js',uglify()))
     .pipe(gulpif('*.css',minifyCss()))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('sass', function(){
@@ -41,11 +42,18 @@ gulp.task('sass', function(){
         .pipe(reload({stream: true}));
 
 });
-
-gulp.task('default',['browserSync','sass'] ,function(){
+gulp.task('rigger', function(){
+    return gulp.src('app/html/index.html')
+        .pipe(rigger())
+        .pipe(gulp.dest('app/'))
+        .pipe(reload({stream: true}));
+});
+gulp.task('default',['browserSync','sass','rigger'] ,function(){
 	watch('app/sass/*.*', function(event, bc){
         gulp.start('sass');
     });
     watch('app/js/*.js', reload); 
-    watch('app/*.html', reload);
+    watch('app/html/*.html', function(event, bc){
+        gulp.start('rigger');
+    });
 });

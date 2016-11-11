@@ -1,0 +1,46 @@
+.page_wrapForTrueFalse {
+  margin-top: 200px; }
+
+.page_truefalse {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center; }
+
+.page_wrapForBut {
+  margin-top: 40px; }
+
+.truefalse {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #f1f2ef; }
+  .truefalse__stub, .truefalsePop__jQuery, .truefalse__temp {
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    font-family: monospace;
+    font-weight: bold;
+    display: inline-block; }
+  .truefalse__stub {
+    color: #58516a;
+    transition: all 1s ease; }
+  .truefalse__pop {
+    color: #ff9a9a;
+    opacity: 0;
+    transform: translateY(-50px); }
+  .truefalse__temp {
+    color: #ff9a9a; }
+
+.wrapForBut {
+  text-align: center; }
+
+.wrapForBut__button {
+  background-color: #7EECD3;
+  font-size: 20px;
+  line-height: 50px;
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px; }
+  .wrapForBut__button:hover {
+    cursor: pointer; }

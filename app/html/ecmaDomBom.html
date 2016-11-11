@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/fonts.css">
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.transform2d.js"></script>
+	
+</head>
+<style>
+	.a{
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 70px;
+		padding: 20px;
+		font-family: "RubikMonoOne-Regular";
+		text-align: center;
+		color: #353535;
+	}
+	.drow{
+		display: table-row;
+	}
+	.drow span{
+		font-size: 50px;
+		position: relative;
+	}
+	h2, h3{
+		font-family: "DidactGothic";
+	}
+	.dtable{
+		display: table;
+	}
+	.dtable-wrap{
+		display: table-cell;
+		vertical-align: middle;
+		font-family: "RubikMonoOne-Regular";
+		font-size: 70px;
+		color: #353535;
+		margin-left: 200px;
+		
+	}
+	.dtable-wrap__main{
+		font-size: 50px;
+	}
+	.spec{
+		margin: 0 auto;
+	}
+	[class$="le-wrap"]{
+		color: red;
+	}
+	.ecmalist{  padding: 0; margin-left: 50px; 
+		overflow: hidden;
+	}
+	.ecmalist__word{
+		font-family: "DidactGothic";
+		list-style-type: none;
+		font-size: 24px;
+		color: #444;
+	}
+	.first_letter{
+		color: #18AFEA;
+		text-transform: lowercase;
+	}
+	.prel{
+		position: absolute;
+		bottom: 100%;
+		height: 300px;
+	}
+	.dom{
+		font-size: 30px;
+		padding-left: 40px;
+	}
+	.dom__item{
+		font-size: 25px;
+		font-family: "DidactGothic";
+		font-weight: bold;
+	}
+	.dom__description{
+		font-size: 20px;
+		font-weight: normal;
+	}
+	.bom{
+		margin-top: 70px;
+		padding-left: 40px;
+	}
+</style>
+
+
+<body>
+	<h2>ECMA - Europian Computer Manufacturers Association( Европейская ассоциация производителей вычислительной техники)</h1>
+
+		<div class="dtable spec">
+			<div class="drow">
+				<div class="dtable-wrap">
+					J<span>ava</span>S<span>cript</span>
+				</div>
+				<div class="dtable-wrap">
+					<div class="dtable">
+						<div class="drow">
+							<div class="prel">
+								<ul class="ecmalist">
+									<li class="ecmalist__word"><span class="first_letter">С</span>интаксис</li>
+									<li class="ecmalist__word"><span class="first_letter">Т</span>ипы данных</li>
+									<li class="ecmalist__word"><span class="first_letter">И</span>нструкции</li>
+									<li class="ecmalist__word"><span class="first_letter">К</span>лючевые слова</li>
+									<li class="ecmalist__word"><span class="first_letter">З</span>арезервированные слова</li>
+									<li class="ecmalist__word"><span class="first_letter">О</span>ператоры</li>
+									<li class="ecmalist__word"><span class="first_letter">О</span>бъекты</li>
+								</ul>
+							</div>
+							<div class="a">E<span class="dtable-wrap__main">cma</span>S<span class="dtable-wrap__main">cript</span></div>
+						</div>
+						<div class="drow">
+							<div class="a">DOM</div>
+						</div>
+						<div class="drow">
+							<div class="a">BOM</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="dom">
+			<h3>DOM Level 1</h2>
+				<div class="dom__item"><div> DOM Core <span class="dom__description"> - в данном модуле описывается способ представления XML-документа и реализован доступ к любой его части.</span> </div></div>
+				<div class="dom__item"><div> DOM HTML <span class="dom__description"> - здесь реализованы механизмы характерные для работы HTML - документа.</span> </div> </div>
+
+				<h3>DOM Level 2</h2>
+					<div class="dom__item"><div> DOM Core <span class="dom__description"> - расширено.</span> </div></div>
+					<h4>Добавлены модули:</h4>
+					<div class="dom__item"><div> DOM Views <span class="dom__description"> - интерфейсы для отслеживания различных представлений документа(например до и после применения стилей CSS).</span> </div> </div>
+					<div class="dom__item"><div> DOM Events <span class="dom__description"> - интерфейсы для событий и обработки событий.</span> </div> </div>
+
+					<div class="dom__item"><div> DOM Style <span class="dom__description"> - Интерфейсы для работы со стилизацией элементов с помощью CSS.</span> </div></div>
+
+					<div class="dom__item"><div> DOM Traversal and Range <span class="dom__description"> - интерфейсы для обхода элементов дерева документа и выполнения операций над ними.</span> </div> </div>
+				</div>
+				<div class="bom">
+					<h1>BOM</h1>
+					<div class="dom__item"><div><span class="dom__description"> - функция отображения всплывающих окон в браузере.</span> </div></div>
+					<div class="dom__item"><div><span class="dom__description"> - возможность перемещать, закрывать и изменять размеры окна браузера.</span> </div></div>
+					<div class="dom__item"><div><span class="dom__description"> - объект navigator предоставляет подробные сведения о браузере.</span> </div></div>
+					<div class="dom__item"><div><span class="dom__description"> - объект location, предоставляет подробные сведения о странице загруженной в браузере.</span> </div></div>
+					<div class="dom__item"><div><span class="dom__description"> - объект screen, предоставляет подробные сведения о разрешении экрана.</span> </div></div>
+					<div class="dom__item"><div><span class="dom__description"> - поддержка coockie-файлов.</span> </div></div>
+					<div class="dom__item"><div><span class="dom__description"> - настраиваемые объекты, включая XMLHttpRequest, а также ActiveXObject в  Internet Explorer.</span> </div></div>
+
+				</div>
+				<style>
+					body {
+					}
+					.rel{
+						position: relative;
+						width: 150px;
+						height: 50px;
+						background-color: #FFFFFF;
+						perspective: 600px;
+						margin-left: 100px;
+						margin-top: 100px;
+					}
+					.abs{
+						position: absolute;
+						width: 100px;
+						height: 50px;
+						transition: all .4s  cubic-bezier(0, .9, .9, 1);
+						transform: translate(0px,0px) rotateY(0) rotateX(0);
+						-webkit-border-radius: 2px;
+						border-radius: 2px;
+					}
+					.layer-0{ background-color: rgba(15, 66, 95, .7); }
+					.layer-1{ background-color: rgba(1, 141, 222, .7); }
+					.layer-2{ background-color: rgba(249, 184, 184, .7); }
+					.layer-3{ background-color: rgba(255, 222, 159, .7); }
+					.layer-4{ background-color: rgba(254, 84, 84, .7); }
+					.layer-5{ background-color: rgba(86, 235, 153, .7); }
+					.layer-6{ background-color: rgba(39, 37, 37, .6) ; height: 2px;}
+					.layer-7{ background-color: #f0f0f0;
+						color: #2C2C2C;
+						padding: 0 10px; 
+						line-height: 50px;
+						font-size: 20px;
+						width: 150px;
+						text-align: center;
+						border: 1px solid black
+						}
+					</style>
+					<script>
+						$(document).ready(function(){
+							var getRandomInt = function (min, max) {
+								return Math.floor(Math.random() * (max - min + 1)) + min;
+							};
+							$('.rel').hover(function(){
+								if(!$(this).hasClass("visited")){
+								$(this).children(".abs").each(function(){
+
+									var rotate = getRandomInt(1,20);
+									var transl = getRandomInt(1,20)*10 + 50;
+									var translY = -30;
+									if($(this).hasClass("layer-6")){ 
+										rotate+=55;
+										translY = 0;
+									}
+									var scale = getRandomInt(5,15)/10 + 0.5;
+									var minus = 1;
+									if(rotate%2){
+										minus = -1;
+									}
+
+									if($(this).hasClass("layer-7")){ 
+										rotate= 0;
+										transl = 140;
+										scale = 1;
+										minus = 1;
+										$(this).css("borderRadius","10px");
+									}
+									if(!($(this).hasClass("layer-7"))){
+									$(this).css("backgroundColor", "rgba("+getRandomInt(0,255)+","+getRandomInt(0,255)+","+getRandomInt(0,255)+",.7)");
+									}
+									$(this).animate( {transform: "scaleY("+scale+") translate("+ transl +"px,"+translY+"px)  rotate("+minus*rotate+"deg)"}, 300);
+									});
+							}
+								$(this).addClass("visited");
+
+							}, function(){
+								// $(this).children(".abs").each(function(){
+								// 	$(this).animate({transform: "translate(0,0) rotate(0deg)"},300);
+								// 	if($(this).hasClass("layer-7")){ 
+								// 		$(this).css("borderRadius","2px");
+								// 	}
+								// });
+							});
+						});
+					</script>
+					<div class="rel">
+						<div class="layer-0 abs"></div>
+						<div class="layer-1 abs"></div>
+						<div class="layer-2 abs"></div>
+						<div class="layer-3 abs"></div>
+						<div class="layer-4 abs"></div>
+						<div class="layer-5 abs"></div>
+						<div class="layer-6 abs"></div>
+						<div class="layer-7 abs">JavaScript</div>
+					</div>
+
+					<div class="rel">
+						<div class="layer-0 abs"></div>
+						<div class="layer-1 abs"></div>
+						<div class="layer-2 abs"></div>
+						<div class="layer-3 abs"></div>
+						<div class="layer-4 abs"></div>
+						<div class="layer-5 abs"></div>
+						<div class="layer-6 abs"></div>
+						<div class="layer-7 abs">DOM</div>
+					</div>
+				</body>
+				</html>

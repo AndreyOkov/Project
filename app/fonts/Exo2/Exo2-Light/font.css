@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Exo2-Light';
+  src: url('Exo2-Light.eot');
+  src: url('Exo2-Light.woff') format('woff'),
+       url('Exo2-Light.ttf') format('truetype'),
+       url('Exo2-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

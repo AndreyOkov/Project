@@ -1,0 +1,58 @@
+		@font-face {
+  font-family: 'RubikMonoOne-Regular';
+  src: url('../fonts/RubikMonoOne-Regular/RubikMonoOne-Regular.eot');
+  src: url('../fonts/RubikMonoOne-Regular/RubikMonoOne-Regular.woff') format('woff'),
+       url('../fonts/RubikMonoOne-Regular/RubikMonoOne-Regular.ttf') format('truetype'),
+       url('../fonts/RubikMonoOne-Regular/RubikMonoOne-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+		@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../fonts/Roboto/RobotoRegular/RobotoRegular.eot');
+  src: url('../fonts/Roboto/RobotoRegular/RobotoRegular.woff') format('woff'),
+       url('../fonts/Roboto/RobotoRegular/RobotoRegular.ttf') format('truetype'),
+       url('../fonts/Roboto/RobotoRegular/RobotoRegular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+		@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../fonts/Roboto/RobotoMedium/RobotoMedium.eot');
+  src: url('../fonts/Roboto/RobotoMedium/RobotoMedium.woff') format('woff'),
+       url('../fonts/Roboto/RobotoMedium/RobotoMedium.ttf') format('truetype'),
+       url('../fonts/Roboto/RobotoMedium/RobotoMedium.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+		@font-face {
+  font-family: 'Exo2-Thin';
+  src: url('../fonts/Exo2/Exo2-Thin/Exo2-Thin.eot');
+  src: url('../fonts/Exo2/Exo2-Thin/Exo2-Thin.woff') format('woff'),
+       url('../fonts/Exo2/Exo2-Thin/Exo2-Thin.ttf') format('truetype'),
+       url('../fonts/Exo2/Exo2-Thin/Exo2-Thin.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+		@font-face {
+  font-family: 'Exo2-Light';
+  src: url('../fonts/Exo2/Exo2-Light/Exo2-Light.eot');
+  src: url('../fonts/Exo2/Exo2-Light/Exo2-Light.woff') format('woff'),
+       url('../fonts/Exo2/Exo2-Light/Exo2-Light.ttf') format('truetype'),
+       url('../fonts/Exo2/Exo2-Light/Exo2-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+		@font-face {
+  font-family: 'DidactGothic';
+  src: url('../fonts/DidactGothic/DidactGothic.eot');
+  src: url('../fonts/DidactGothic/DidactGothic.woff') format('woff'),
+       url('../fonts/DidactGothic/DidactGothic.ttf') format('truetype'),
+       url('../fonts/DidactGothic/DidactGothic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+

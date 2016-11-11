@@ -1,0 +1,62 @@
+.page_wrapTest{
+	margin-top: 200px; 
+}
+
+.page_test{
+	width: 500px;
+	margin: 0 auto;
+	text-align: center; 
+}
+.page_wrapForBut{
+	margin-top: 40px;
+}
+.test{
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #f1f2ef;
+	&__stub , &__popJS{
+		height: 60px;
+		font-size: 30px;
+		line-height: 60px;
+		font-family: monospace;
+		font-weight: bold;
+		display: inline-block;
+		
+	}
+	&__stub{
+		color: #58516a;
+		transition: all 1s ease;
+	}
+	.top{
+		color: #ff9a9a;
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	.center{
+		color: #ff9a9a;
+		opacity: 1;
+	}
+	
+}
+.wrapForBut{
+	text-align: center;
+}
+.wrapForBut__button{
+	background-color: #7EECD3;
+	font-size: 20px;
+	line-height: 50px;
+	display: inline-block;
+	height: 50px;
+	width: 100px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	&:hover{
+		cursor: pointer;
+	}
+
+
+}
+
+.anotherTest_JS{
+	margin-top: 100px;
+}
