@@ -12,6 +12,8 @@
 	<!-- build:js ./js/combine.js -->
 	<script src="js/jquery.js"></script>
 	<script src="js/velocity.min.js"></script> 
+	<script src="js/jquery.svg.min.js"></script> 
+	<script src="js/rafael.min.js"></script> 
 	<script src="js/common.js"></script> 
 	<!-- endbuild -->
 	<style>
@@ -19,39 +21,27 @@
 	</style>
 </head>
 <body>
-<div class="main">
-	
-	<div>
-		<span class="green">Green</span>
+	<div class="main">
+		<div class="main__vhSvg">
+			<button class="addSVG" >Добавить SVG</button>
+			<label for="svgWidth">Ширина  </label><input type="text" class="svg__width"  size="5" value="600" id="svgWidth" /> 
+			<label for="svgHeight">Высота  </label><input type="text" class="svg__height" size="5" value="300" id="svgHeight" />
+		</div>
+
+		<div class="main__vhSvg">
+			<button class="addGrid" >Добавить сетку</button>
+
+			
+		</div>
+
+		<div class="forsvg">
+			
+			<svg version="1.1"
+			width="300" height="200"
+			xmlns="http://www.w3.org/2000/svg">
+			<circle id="circle" cx="20" cy="20" r="5" fill="black" />
+		</svg>
+
 	</div>
-	<div>
-		<span class="blue">Blue</span>
-	</div>
-	<div>
-		<span class="yellow">Yellow</span>
-	</div>
-
-	<div>
-		<span class="magenta">Magenta</span>
-	</div>
-	<div>
-		<span class="black">Black</span>
-	</div>
-</div>
-
-
-
-
-<div class="forsvg">
-<svg version="1.1"
-     
-     width="300" height="200"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <circle id="circle" cx="20" cy="20" r="5" fill="black" />
-<line id="line" x1="10" x2="50" y1="110" y2="150" stroke="orange" fill="transparent" stroke-width="5"/>
-</svg>
-</div>
-<button>Нажми!</button>
 </body>
 </html>

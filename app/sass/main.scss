@@ -1,37 +1,9 @@
-.green, .blue, .yellow, .magenta, .black {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  text-align: center;
-  line-height: 100px;
-  color: #fff;
-  transition: all 0.3s ease; 
+
+.main__vhSvg{
+	margin-right: 40px;
+	display: inline-block;
 }
 
-.green {
-  background: green;
-
-}
-
-.blue {
-  background: blue;
-
-}
-
-.yellow {
-  background: yellow;
-
-}
-
-.magenta {
-  background: magenta;
-
-}
-
-.black {
-  background: black;
-
-}
 
 .forsvg{
 	width: 150px;
