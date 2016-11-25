@@ -119,7 +119,23 @@ $(document).ready(function(){
 			Y2: (y+h)});
 		canvas.appendChild(rect);
 	});
-
+	// $("#addLine").click(function() {
+	// 	var fillCol = "#963";
+	// 	var x = Number(document.getElementById("rectX").value);
+	// 	var y = Number(document.getElementById("rectY").value);
+	// 	var w = Number(document.getElementById("rectW").value);
+	// 	var h = Number(document.getElementById("rectH").value);
+	// 	var rect = SVG.rectangle( x, y, w, h, fillCol);
+	// 	objectBox.push({ obj: rect,
+	// 		name: "rect",
+	// 		fill: fillCol,
+	// 		id: rect.id,
+	// 		X1: x,
+	// 		Y1: y,
+	// 		X2: (x+w), 
+	// 		Y2: (y+h)});
+	// 	canvas.appendChild(rect);
+	// });
 	var SVG = {
 		xmlns : 'http://www.w3.org/2000/svg',
 		canvas : function( width, height, containerId ){
@@ -250,19 +266,18 @@ $("#container").mousedown(function(e) {
 	    			mousedown = true;
 	    			curr = box;
 	    			curr.nowX  = xNow - curr.X1;
-					curr.nowY  = yNow - curr.Y1;
+	    			curr.nowY  = yNow - curr.Y1;
 	    			curr.obj.setAttribute("stroke", "red");
 	    			break;
 	    		} 
-	    			
+
 	    	}
 	    }
-	
+
 	});
 $("#container").mouseup(function(e){
 	if(mousedown){
 		mousedown = false;
-		curr.obj.setAttribute("fill",curr.oldFill);
 	}
 });
 
@@ -295,5 +310,18 @@ $("#container").mousemove(function(e) {
 	    	curr.Y2 = curr.Y1+h;
 	    }
 	}
+});
+
+$("#move").click(function() {
+	var moveX = Number(document.getElementById("moveX").value);
+	var moveY = Number(document.getElementById("moveY").value);
+	console.log("moveX"+ moveX+ "moveY" + moveY + " " +curr.id);
+	$("#"+curr.id).velocity({x:moveX,y:moveY});
+	var w = curr.X2-curr.X1;
+	var h = curr.Y2-curr.Y1;
+	curr.X1 = moveX;
+	curr.X2 = curr.X1+w;
+	curr.Y1 = moveY;
+	curr.Y2 = curr.Y1+h;
 });
 });
