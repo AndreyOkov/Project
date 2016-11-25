@@ -5,3 +5,8 @@
 
 .forsvg {
   width: 150px; }
+
+#container {
+  display: inline-block;
+  border: 1px solid;
+  margin-top: 30px; }

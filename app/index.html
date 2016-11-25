@@ -23,33 +23,47 @@
 <body>
 	<div class="main">
 		<div class="main__vhSvg">
-			<button class="addSVG" >Добавить SVG</button>
+			<button id="addSvg" >Добавить Холст</button>
 			<label for="svgWidth">Ширина  </label><input type="text" class="svg__width"  size="5" value="600" id="svgWidth" /> 
 			<label for="svgHeight">Высота  </label><input type="text" class="svg__height" size="5" value="300" id="svgHeight" />
 		</div>
-
 		<div class="main__vhSvg">
-			<button class="addGrid" >Добавить сетку</button>
-			<label for="gridStep"></label>
-			<input type="text" value="20" size="3" id="gridStep">
+			<button id="remSvg">Удалить холст</button>
 		</div>
 
 		<div class="main__vhSvg">
-			<button id="svgRemove">Удалить холст</button>
+			<button id="addGrid" >Добавить сетку</button>
+			<label for="gridStep"></label>
+			<input type="text" value="20" size="2" id="gridStep">
+		</div>
+
+		<div class="main__vhSvg">
+			<button id="remGrid">Удалить сетку</button>
 		</div>
 		
 	</div>
 	<div class="figure">
 		<div class="main__vhSvg">
-			<button id="addCircle">Круг</button>
-			<label for="circleRad">Радиус</label>
-			<input type="text" id="circleRad" size="3" value="10" />
+			<button id="addCircle">Circle</button>
+			<label for="circleRad">Rad</label>
+			<input type="text" id="circleRad" size="2" value="10" />
 			<label for="circleX">X</label>
-			<input type="text" id="circleX" size="3" value="50" />
+			<input type="text" id="circleX" size="2" value="50" />
 			<label for="circleY">Y</label>
-			<input type="text" id="circleY" size="3" value="50" />
+			<input type="text" id="circleY" size="2" value="50" />
+		</div>
+		<div class="main__vhSvg">
+			<button id="addRect">Rect</button>
+			<label for="rectX">X</label>
+			<input type="text" id="rectX" size="2" value="10" />
+			<label for="rectY">Y</label>
+			<input type="text" id="rectY" size="2" value="50" />
+			<label for="rectW">W</label>
+			<input type="text" id="rectW" size="2" value="50" /><label for="rectH">H</label>
+			<input type="text" id="rectH" size="2" value="50" />
 		</div>
 	</div>
 
+<div id="container"></div>
 </body>
 </html>
