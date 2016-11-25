@@ -46,7 +46,8 @@ $(document).ready(function(){
 	var canvasH;
 	var gStep;
 	var gridBox = [];
-
+	var objectBox = [];
+	var elNumber = 0;
 	$("#addSvg").click(function() {
 		canvasW = Number($(".svg__width").val());
 		canvasH = Number($(".svg__height").val());
@@ -84,18 +85,38 @@ $(document).ready(function(){
 		}
 	});
 	$("#addCircle").click(function() {
+		var fillCol = "#963";
 		var x = Number(document.getElementById("circleX").value);
 		var y = Number(document.getElementById("circleY").value);
 		var rad = Number(document.getElementById("circleRad").value);
-		var circle = SVG.circle( x, y, rad, "#369");
+		var circle = SVG.circle( x, y, rad, fillCol);
+		objectBox.push({ obj: circle,
+			name: "circle",
+			fill: fillCol,
+			r:  rad,
+			id: circle.id, 
+			X1: (x-rad),
+			Y1: (y-rad),
+			X2: (x+rad), 
+			Y2: (y+rad)});
+
 		canvas.appendChild(circle);
 	});
 	$("#addRect").click(function() {
+		var fillCol = "#963";
 		var x = Number(document.getElementById("rectX").value);
 		var y = Number(document.getElementById("rectY").value);
 		var w = Number(document.getElementById("rectW").value);
 		var h = Number(document.getElementById("rectH").value);
-		var rect = SVG.rectangle( x, y, w, h, "#369");
+		var rect = SVG.rectangle( x, y, w, h, fillCol);
+		objectBox.push({ obj: rect,
+			name: "rect",
+			fill: fillCol,
+			id: rect.id,
+			X1: x,
+			Y1: y,
+			X2: (x+w), 
+			Y2: (y+h)});
 		canvas.appendChild(rect);
 	});
 
@@ -127,6 +148,8 @@ $(document).ready(function(){
 			aCircle.setAttribute('cy', y);
 			aCircle.setAttribute('r', r);
 			aCircle.setAttribute('fill',fill);
+			aCircle.setAttribute('id', "circle" + elNumber);
+			elNumber++;
 			return aCircle;
 		},
 		rectangle : function (x, y, w, h, fill) {
@@ -136,50 +159,141 @@ $(document).ready(function(){
 			aRect.setAttribute('width', w);
 			aRect.setAttribute('height', h);
 			aRect.setAttribute('fill',fill);
+			aRect.setAttribute('id', "rect" + elNumber);
 			return aRect;
 		}
 	}; //SVG end object
 
-	var lines = [];
-	lines.addLine = function( line ){
-		this.push( line );
-		return line;
+	var xNow;
+	var yNow;
+/*$(document).mousemove(function(e){
+	if($("svg").length){
+	var svgOffs = $("#container").offset();
+	var svgLeft = svgOffs.left - $("#container").scrollLeft(); // позиция X холста SVG 
+	var svgTop  = svgOffs.top  - $("#container").scrollTop(); // позиция Y холста SVG 
+    var xNow = getPosition(e).x-svgLeft; // координата X внутри SVG
+    var yNow = getPosition(e).y-svgTop; // координата Y внутри SVG
+    //console.log("X: " + X + " Y: " + Y + " svgTop: " + svgTop + " svgLeft: " + svgLeft); // вывод результата в консоль
+}*/
+//}); 
+var lines = [];
+lines.addLine = function( line ){
+	this.push( line );
+	return line;
+};
+
+function start() {
+	var canvas = SVG.canvas( 1000 , 400 , 'container' ),
+	lineElement, i, x1;
+
+	for (i = 1; i < 11; i += 1) {
+		x1 = Math.floor(Math.random() * 500 / 2),
+		lineElement = lines.addLine( SVG.line(x1, 0, 200, 300, 'rgb(0,0,' + x1 + ')', i));
+		canvas.appendChild( lineElement );
+	}
+}
+
+
+
+// Функция возвращает координаты мыши относительно окна браузера
+// ( т.е. относительно области которая в данный момент видна пользователю)
+function getPosition(e) {
+	var posx = 0;
+	var posy = 0;
+
+	if (!e) var e = window.event;
+
+	if (e.pageX || e.pageY) {
+		posx = e.pageX;
+		posy = e.pageY;
+	}
+	else if (e.clientX || e.clientY) {
+		posx = e.clientX + document.body.scrollLeft + 
+		document.documentElement.scrollLeft;
+		posy = e.clientY + document.body.scrollTop + 
+		document.documentElement.scrollTop;
+	}
+
+	return {
+		x: posx,
+		y: posy
 	};
-
-	function start() {
-		var canvas = SVG.canvas( 1000 , 400 , 'container' ),
-		lineElement, i, x1;
-
-		for (i = 1; i < 11; i += 1) {
-			x1 = Math.floor(Math.random() * 500 / 2),
-			lineElement = lines.addLine( SVG.line(x1, 0, 200, 300, 'rgb(0,0,' + x1 + ')', i));
-			canvas.appendChild( lineElement );
-		}
+}
+var xNow;
+var yNow;
+	/*$(document).click(function(e) {
+		if($("svg").length){
+		var svgOffs = $("#container").offset();
+		var svgLeft = svgOffs.left - $("#container").scrollLeft(); // позиция X холста SVG 
+		var svgTop  = svgOffs.top  - $("#container").scrollTop(); // позиция Y холста SVG 
+	    var xNow = getPosition(e).x-svgLeft; // координата X внутри SVG
+	    var yNow = getPosition(e).y-svgTop; // координата Y внутри SVG
+	    console.log("X: " + xNow + " Y: " + yNow + " svgTop: " + svgTop + " svgLeft: " + svgLeft); // вывод результата в консоль
 	}
-
-
-
-
-	function getPosition(e) {
-		var posx = 0;
-		var posy = 0;
-
-		if (!e) var e = window.event;
-
-		if (e.pageX || e.pageY) {
-			posx = e.pageX;
-			posy = e.pageY;
-		}
-		else if (e.clientX || e.clientY) {
-			posx = e.clientX + document.body.scrollLeft + 
-			document.documentElement.scrollLeft;
-			posy = e.clientY + document.body.scrollTop + 
-			document.documentElement.scrollTop;
-		}
-
-		return {
-			x: posx,
-			y: posy
-		};
+	console.log(objectBox);
+});*/
+var curr=null;
+var mousedown = false;
+$("#container").mousedown(function(e) {
+	
+	var svgOffs = $("#container").offset();
+		var svgLeft = svgOffs.left - $("#container").scrollLeft(); // позиция X холста SVG 
+		var svgTop  = svgOffs.top  - $("#container").scrollTop(); // позиция Y холста SVG 
+	    var xNow = getPosition(e).x-svgLeft; // координата X внутри SVG
+	    var yNow = getPosition(e).y-svgTop;  // координата Y внутри SVG
+	    // console.log("X: " + xNow + " Y: " + yNow); // вывод результата в консоль
+	    if(curr !== null){curr.obj.setAttribute("stroke", "none");}
+	    if(objectBox.length){
+	    	for(var i=0; i< objectBox.length; i++){
+	    		var box = objectBox[i];
+	    		if(box.X1 <= xNow && xNow <= box.X2 && box.Y1 <= yNow && yNow <= box.Y2){
+	    			mousedown = true;
+	    			curr = box;
+	    			curr.nowX  = xNow - curr.X1;
+					curr.nowY  = yNow - curr.Y1;
+	    			curr.obj.setAttribute("stroke", "red");
+	    			break;
+	    		} 
+	    			
+	    	}
+	    }
+	
+	});
+$("#container").mouseup(function(e){
+	if(mousedown){
+		mousedown = false;
+		curr.obj.setAttribute("fill",curr.oldFill);
 	}
+});
+
+$("#container").mousemove(function(e) {
+
+	if(mousedown){
+		var svgOffs = $("#container").offset();
+		var svgLeft = svgOffs.left - $("#container").scrollLeft(); // позиция X холста SVG 
+		var svgTop  = svgOffs.top  - $("#container").scrollTop(); // позиция Y холста SVG 
+	    var xNow = getPosition(e).x-svgLeft; // координата мыши X внутри SVG
+	    var yNow = getPosition(e).y-svgTop;  // координата мыши Y внутри SVG
+
+
+	    var w = curr.X2-curr.X1;
+	    var h = curr.Y2-curr.Y1;
+
+	    if(curr.name === "circle"){
+	    	curr.obj.setAttribute("cx", xNow+curr.r-curr.nowX);
+	    	curr.obj.setAttribute("cy", yNow+curr.r-curr.nowY);
+	    	curr.X1 = xNow-curr.nowX;
+	    	curr.X2 = curr.X1+w;
+	    	curr.Y1 = yNow-curr.nowY;
+	    	curr.Y2 = curr.Y1+h;
+	    } else if(curr.name === "rect"){
+	    	curr.obj.setAttribute("x",xNow-curr.nowX);
+	    	curr.obj.setAttribute("y",yNow-curr.nowY);
+	    	curr.X1 = xNow-curr.nowX;
+	    	curr.X2 = curr.X1+w;
+	    	curr.Y1 = yNow-curr.nowY;
+	    	curr.Y2 = curr.Y1+h;
+	    }
+	}
+});
 });
